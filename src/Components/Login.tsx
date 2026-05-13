@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Container, Button, Input } from "../styles/login";
+
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,16 +20,16 @@ export default function Login() {
     }
     
     return (
-        <>
+        <Container>
             <form onSubmit={handleSubmit}>
-                <input
+                <Input
                     type="email"
                     name="Email"
                     placeholder="Digite um e-mail..."
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <input
+                <Input
                     type="password"
                     name="Password"
                     placeholder="Digite uma senha..."
@@ -35,8 +37,8 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button type="submit">Login</button>
+                <Button type="submit">Login</Button>
             </form>
-        </>
+        </Container>
     )
 }
